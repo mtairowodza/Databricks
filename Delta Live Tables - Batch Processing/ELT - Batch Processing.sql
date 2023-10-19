@@ -103,6 +103,7 @@ CREATE TEMPORARY STREAMING LIVE TABLE patient_silver_clean
 )
 TBLPROPERTIES ("quality" = "silver")
 COMMENT "Cleansed bronze patient dataset with enforced data quality"
+PARTITIONED BY (Year, Month)
 AS 
 SELECT 
     PatientID,
@@ -112,7 +113,9 @@ SELECT
     Gender,
     Address,
     Email,
-    CreatedAt
+    CreatedAt,
+    YEAR(CreatedAt) AS   Year,
+    MONTH(CreatedAt) AS  Month
 FROM STREAM(LIVE.patient_bronze)
 
 -- COMMAND ----------
@@ -193,6 +196,7 @@ CREATE  STREAMING LIVE TABLE billing_silver
 TBLPROPERTIES ("quality" = "silver")
 COMMENT "Cleansed bronze medical staff dataset with enforced data quality"
 LOCATION "abfss://sqlserver@adlsledemo001.dfs.core.windows.net/silver/Billing/"
+PARTITIONED BY (Year, Month)
 AS 
 SELECT 
     BillingID,
@@ -201,7 +205,9 @@ SELECT
     HospitalID,
     BillingDate,
     Amount  AS BillingAmount,
-    CreatedAt
+    CreatedAt,
+    YEAR(CreatedAt) AS   Year,
+    MONTH(CreatedAt) AS  Month
 FROM STREAM(LIVE.billing_bronze)
 
 -- COMMAND ----------
@@ -220,6 +226,7 @@ CREATE  LIVE TABLE DimPatients
 TBLPROPERTIES ("quality" = "gold")
 COMMENT "patient dimension in the gold layer"
 LOCATION "abfss://sqlserver@adlsledemo001.dfs.core.windows.net/gold/DimPatient/"
+PARTITIONED BY (Year, Month)
 AS
 SELECT 
 *
@@ -285,6 +292,7 @@ CREATE  LIVE TABLE FactBilling
 TBLPROPERTIES ("quality" = "gold")
 COMMENT "Billing fact in the gold layer"
 LOCATION "abfss://sqlserver@adlsledemo001.dfs.core.windows.net/gold/FactBilling/"
+PARTITIONED BY (Year, Month)
 AS
 SELECT 
 *
