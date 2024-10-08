@@ -108,3 +108,81 @@
 ##Running notebooks
 
 print('.ptint hallo')
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC # Partner Learning
+# MAGIC This is some text in **bold** and _italic_. and *here*
+# MAGIC - Here's a bullet point
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## DB workspace and services
+# MAGIC - Implemantationn of lakehouse technology
+# MAGIC - data storage layer on top of data lake, flexible, cost efficient, storage
+# MAGIC - best of both worlds
+# MAGIC - unified and scalable
+# MAGIC
+# MAGIC ### Data plane
+# MAGIC - is where data is processed
+# MAGIC - hosts compute resources - clusters
+# MAGIC - connection to external data sources
+# MAGIC
+# MAGIC
+# MAGIC ### Control Plane
+# MAGIC - back end services that data bricks manages
+# MAGIC - metastore, access control, data lineage / explorer
+# MAGIC - launch clusters, run jobs etc
+# MAGIC - workflow managers
+# MAGIC - cluster managers for compute
+# MAGIC - unity catalogue
+# MAGIC
+# MAGIC ### Web app
+# MAGIC - three services, data science, data bricks machine learning, and sql learning persona
+# MAGIC - using reps
+# MAGIC - Ochestration has 2 components. 1. Delta live tables and 2. Jobs
+# MAGIC
+# MAGIC ## Clusters
+# MAGIC - Compute resources and configurations - can run as commands in notebooks or as a job
+# MAGIC - live in dataplace in org's account
+# MAGIC - a cluster has a Driver node and worker node, each being a VM instance
+# MAGIC - 2 main types
+# MAGIC -  All-purpose for interactive development using notebooks. Created from wordspace or API, multiple sers can share 
+# MAGIC -  and job clusters for automating workloads, created when running job. cant be restarted. Configuration infor retained for the last 30 instances
+# MAGIC - Workloads includes notebook, job, pipeline
+# MAGIC
+# MAGIC ### cluster mode
+# MAGIC - standard (multi-node)  - default mode for workloads supports any language
+# MAGIC - single node -low cost, single node machine, lightweight analysis and machine learning
+# MAGIC
+# MAGIC ## Runtime versions
+# MAGIC
+# MAGIC - standard  - Apache spark and other components
+# MAGIC - machne learning - has popular machine learning libraries
+# MAGIC - Optional add on to optimize performance and cost of SQL workloads
+# MAGIC
+# MAGIC
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC
+# MAGIC # DATA Bricks notebooks
+# MAGIC
+# MAGIC - support multiple languages - python, SQL, Scala, R
+# MAGIC - collaborative - can be used by multiple users
+# MAGIC - deal for exploration
+# MAGIC - adaptable- install libraries
+# MAGIC - reproducable
+# MAGIC - faster to production - jobs ad visualisation 
+# MAGIC - enterprise ready
+# MAGIC
+# MAGIC - magic commands for switchinig languages, shell code, md or db utils
+# MAGIC - execute one notebook from another using %run
+# MAGIC - 
+
+# COMMAND ----------
+
+
