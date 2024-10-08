@@ -185,4 +185,17 @@ print('.ptint hallo')
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC # GIT versioning with Databricks Repos
+# MAGIC - native intergration with Github, Azure devops, gitlab and Gitbucket
+# MAGIC - CI/CD API surface to intergrate with automation for deve/staging/prod multi workspace story
+# MAGIC - Enterprise read - Allow lists to avoid exfiltration  and secret detection to avoid leaking keys
+# MAGIC - cloning repository creates a local working copy of the remote git repository
+# MAGIC - Synhcronising upstream
+# MAGIC - creating branches
+# MAGIC - Requires username and personal access token
+# MAGIC - 
+
+# COMMAND ----------
+
 
